@@ -1,46 +1,49 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
-import { Download, Briefcase, GraduationCap, Zap, BookOpen, MountainSnow, Gamepad2, PenTool, Terminal } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Zap, BookOpen, Coffee, Code2, Video, Terminal } from "lucide-react";
 
 export default function ProfessionalJourney() {
     const experiences = [
         {
-            role: "Senior Software Engineer",
-            company: "TechCorp Solutions",
-            date: "Jan 2021 — Present",
-            description: `"Leading the charge on modernizing our tech stack. I spearheaded the transition from a monolithic architecture to microservices, enabling us to ship features daily instead of weekly."`,
-            impact: "Increased deployment frequency by 300% and reduced manual testing overhead by 40%, directly accelerating the company's time-to-market for new enterprise features.",
+            role: "Full Stack Developer",
+            company: "World of Tech",
+            location: "Remote — Pakistan",
+            date: "Mar 2023 — Present",
+            description: `"Building full ERP modules end-to-end — owning both the React frontend and the ASP.NET Core backend independently on every feature."`,
+            impact: "Delivered HR, Inventory, and Finance modules in a live enterprise ERP, with measurably faster SQL Server response times after query and schema optimisation.",
             points: [
-                "Architected and migrated legacy monolith to AWS microservices.",
-                "Led a team of 6 engineers in developing a real-time analytics dashboard.",
-                "Mentored junior developers and established code review standards.",
+                "Built end-to-end ERP modules (HR, Inventory, Finance) using React and ASP.NET Core, handling both frontend and backend independently.",
+                "Implemented role-based access control and secure login flows using ASP.NET Identity, JWT, and custom middleware.",
+                "Optimised SQL Server queries and schemas, reducing response times across high-traffic endpoints.",
             ]
         },
         {
             role: "Full Stack Developer",
-            company: "WebStudio Agency",
-            date: "Mar 2018 — Dec 2020",
-            description: `"My time at WebStudio was defined by variety and velocity. I built high-performance e-commerce platforms for diverse clients, mastering the art of balancing custom functionality with core web vitals."`,
-            impact: "Consistently achieved 95+ Lighthouse scores for client builds, resulting in a measurable 15% increase in conversion rates for our top 3 retail clients.",
+            company: "MaxHR (PlanZ)",
+            location: "Remote — Dubai",
+            date: "Nov 2024 — Jun 2025",
+            description: `"A fast-moving product team shipping payroll, HR, and compliance features for enterprise clients across the Gulf — built in React Native and .NET APIs."`,
+            impact: "Shipped 10+ modules across payroll and HR workflows, strengthened platform security with MFA and QR auth, and integrated AWS S3 and NATS for scalable file storage and messaging.",
             points: [
-                "Developed custom e-commerce solutions using Next.js and Shopify API.",
-                "Optimized frontend performance for core web vitals.",
-                "Integrated multiple third-party payment gateways and shipping providers.",
+                "Developed Training, Inventory, Loan, Assets, and Support Ticket modules end-to-end in React Native across HR and Payroll workflows.",
+                "Implemented MFA and QR-based authentication, strengthening platform-wide security across all user roles.",
+                "Delivered SIF Payroll Gratuity Report, Payslip modifications, Auth Dashboard APIs, Trade License, and Invite modules.",
+                "Built a User-Status Cron Job for auto-checkout, integrated AWS S3 for file storage, and used NATS as a message broker across microservices.",
             ]
         },
         {
-            role: "Junior Developer",
-            company: "AppWorks Inc.",
-            date: "Jun 2016 — Feb 2018",
-            description: `"Where it all started. I cut my teeth on mobile development and backend maintenance, learning the importance of clean code and user-centric design in a fast-paced startup environment."`,
-            impact: "Played a pivotal role in launching the company's first cross-platform mobile app, which gained 50k users in its first month.",
+            role: ".NET Developer Intern",
+            company: "Next Logics",
+            location: "Onsite — Karachi",
+            date: "Sep 2024 — Oct 2024",
+            description: `"My formal introduction to production .NET systems — contributing to real internal tools from day one."`,
+            impact: "Gained hands-on professional experience in backend API development and database integration within an onsite team environment.",
             points: [
-                "Collaborated on building a cross-platform mobile app using React Native.",
-                "Maintained and fixed bugs in existing Ruby on Rails applications.",
-                "Assisted in UI/UX design and prototyping using Figma.",
+                "Contributed to internal projects using ASP.NET MVC and Web Forms.",
+                "Gained professional experience in backend API development and database integration.",
             ]
-        }
+        },
     ];
 
     return (
@@ -54,12 +57,16 @@ export default function ProfessionalJourney() {
                             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Journey</span>
                         </h2>
                         <p className="text-slate-400 text-lg leading-relaxed">
-                            Over 8 years of crafting digital experiences. From my first line of code to leading engineering teams, here is the story of how <span className="font-[family-name:var(--font-dancing-script)] text-xl text-white">Abdul Rafay Khan</span> builds scalable web applications and high-performance frontend systems.
+                            {"Here's how"} <span className="font-[family-name:var(--font-dancing-script)] text-xl text-white">Abdul Rafay Khan</span> went from writing first lines of code to shipping full-stack products — working across the .NET ecosystem, React, and modern cloud-ready architectures.
                         </p>
                     </div>
-                    <button className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 text-white rounded-lg transition-colors font-medium whitespace-nowrap">
+                    <a
+                        href="/Abdul Rafay Khan - Resume.pdf"
+                        download
+                        className="hidden md:flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 border border-blue-500 text-white rounded-lg transition-colors font-medium whitespace-nowrap"
+                    >
                         <Download className="w-4 h-4" /> Download CV
-                    </button>
+                    </a>
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
@@ -88,10 +95,11 @@ export default function ProfessionalJourney() {
                                             {exp.date}
                                         </span>
                                     </div>
-                                    <p className="text-blue-400 font-medium mb-6 text-lg">{exp.company}</p>
+                                    <p className="text-blue-400 font-medium mb-1 text-lg">{exp.company}</p>
+                                    <p className="text-slate-500 text-sm mb-6">{exp.location}</p>
 
                                     <div className="bg-[#0f172a]/50 border-l-2 border-blue-500/50 pl-4 py-1 mb-8">
-                                        <p className="text-slate-300 italic">&quot;{exp.description}&quot;</p>
+                                        <p className="text-slate-300 italic">{exp.description}</p>
                                     </div>
 
                                     <div className="bg-[#1e293b]/30 border border-slate-800 rounded-xl p-5 mb-6">
@@ -124,18 +132,34 @@ export default function ProfessionalJourney() {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-                                    <h4 className="text-xl font-bold text-white">B.Sc. Computer Science</h4>
+                                    <h4 className="text-xl font-bold text-white">B.Sc. Software Engineering</h4>
                                     <span className="inline-flex items-center px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-full text-xs font-medium text-slate-300 whitespace-nowrap">
-                                        2012 — 2016
+                                        Expected 2027
                                     </span>
                                 </div>
-                                <p className="text-blue-400 font-medium text-base">University of Technology</p>
+                                <p className="text-blue-400 font-medium text-base">University of Karachi</p>
+                                <p className="text-slate-500 text-sm mt-1">Karachi, Pakistan</p>
+
+                                <div className="mt-8">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
+                                        <h4 className="text-xl font-bold text-white">Diploma in Software Engineering</h4>
+                                        <span className="inline-flex items-center px-3 py-1 bg-slate-800/80 border border-slate-700 rounded-full text-xs font-medium text-slate-300 whitespace-nowrap">
+                                            Completed — Grade A
+                                        </span>
+                                    </div>
+                                    <p className="text-blue-400 font-medium text-base">Aptech</p>
+                                    <p className="text-slate-500 text-sm mt-1">Karachi, Pakistan</p>
+                                </div>
                             </motion.div>
                         </div>
 
-                        <button className="md:hidden mt-8 w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 text-white rounded-lg transition-colors font-medium">
+                        <a
+                            href="/Abdul Rafay Khan - Resume.pdf"
+                            download
+                            className="md:hidden mt-8 w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 border border-blue-500 text-white rounded-lg transition-colors font-medium"
+                        >
                             <Download className="w-4 h-4" /> Download CV
-                        </button>
+                        </a>
                     </div>
 
                     {/* Sidebar - Right Column */}
@@ -147,10 +171,14 @@ export default function ProfessionalJourney() {
                                 <Terminal className="w-5 h-5 text-blue-500" /> Technical Expertise
                             </h3>
 
-                            <div className="mb-8">
-                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Languages & Core</p>
+                            <div className="mb-6">
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Languages</p>
                                 <div className="space-y-4">
-                                    {[{ name: "TypeScript / JavaScript", val: "95%" }, { name: "Go / Rust", val: "75%" }, { name: "Python", val: "85%" }].map(lang => (
+                                    {[
+                                        { name: "C# / .NET", val: "90%" },
+                                        { name: "TypeScript / JavaScript", val: "90%" },
+                                        { name: "Python / SQL", val: "75%" },
+                                    ].map(lang => (
                                         <div key={lang.name}>
                                             <div className="flex justify-between text-sm mb-1.5">
                                                 <span className="text-slate-300 font-medium">{lang.name}</span>
@@ -164,10 +192,43 @@ export default function ProfessionalJourney() {
                                 </div>
                             </div>
 
-                            <div className="mb-8">
-                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Frameworks & Libs</p>
+                            <div className="mb-6">
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Backend</p>
                                 <div className="flex flex-wrap gap-2">
-                                    {["React", "Next.js", "Node.js", "Express", "TailwindCSS", "Redux", "GraphQL", "Prisma"].map(tool => (
+                                    {["ASP.NET Core", "ASP.NET MVC", "Web API", "Node.js", "Express.js"].map(tool => (
+                                        <span key={tool} className="px-3 py-1 border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-md">
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mb-6">
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Frontend</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {["React", "React Native", "Next.js", "Tailwind CSS", "ShadCN", "Bootstrap"].map(tool => (
+                                        <span key={tool} className="px-3 py-1 border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-md">
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mb-6">
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Databases</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {["PostgreSQL", "SQL Server", "MongoDB", "MySQL", "Firebase"].map(tool => (
+                                        <span key={tool} className="px-3 py-1 border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-md">
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mb-6">
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Cloud & Tools</p>
+                                <div className="flex flex-wrap gap-2">
+                                    {["Azure", "AWS S3", "IIS", "Vercel", "Git", "Postman"].map(tool => (
                                         <span key={tool} className="px-3 py-1 border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-md">
                                             {tool}
                                         </span>
@@ -176,9 +237,9 @@ export default function ProfessionalJourney() {
                             </div>
 
                             <div>
-                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">DevOps & Tools</p>
+                                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-4">Auth & Security</p>
                                 <div className="flex flex-wrap gap-2">
-                                    {["Docker", "AWS (EC2, S3, Lambda)", "GitHub Actions", "PostgreSQL", "Redis", "Terraform"].map(tool => (
+                                    {["ASP.NET Identity", "JWT", "MFA", "QR Authentication", "OAuth"].map(tool => (
                                         <span key={tool} className="px-3 py-1 border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-md">
                                             {tool}
                                         </span>
@@ -187,54 +248,41 @@ export default function ProfessionalJourney() {
                             </div>
                         </div>
 
-                        {/* Side Pursuits */}
+                        {/* Beyond the Code */}
                         <div className="bg-[#0f172a] border border-slate-800 rounded-2xl p-6 lg:p-8">
                             <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-3">
-                                <BookOpen className="w-5 h-5 text-blue-500" /> Side Pursuits & Interests
+                                <BookOpen className="w-5 h-5 text-blue-500" /> Beyond the Code
                             </h3>
 
                             <div className="space-y-6">
                                 <div className="flex gap-4">
                                     <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
-                                        <MountainSnow className="w-5 h-5 text-slate-400" />
+                                        <Code2 className="w-5 h-5 text-slate-400" />
                                     </div>
                                     <div>
-                                        <h4 className="text-sm font-bold text-white mb-1">Outdoor Exploration</h4>
-                                        <p className="text-xs text-slate-400 leading-relaxed">Avid hiker and photographer, capturing landscapes on weekends.</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-[#1e293b] border border-slate-600 flex items-center justify-center relative shadow-[0_0_10px_rgba(255,255,255,0.1)] shrink-0">
-                                        <PenTool className="w-5 h-5 text-white" />
-                                        <div className="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-sm font-bold text-white mb-1">Tech Blogging</h4>
-                                        <p className="text-xs text-slate-400 leading-relaxed">Writing weekly articles on Dev.to about system design.</p>
+                                        <h4 className="text-sm font-bold text-white mb-1">Open Source Projects</h4>
+                                        <p className="text-xs text-slate-400 leading-relaxed">Building and contributing to projects that solve real problems for developers.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
                                     <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
-                                        <Gamepad2 className="w-5 h-5 text-slate-400" />
+                                        <Coffee className="w-5 h-5 text-slate-400" />
                                     </div>
                                     <div>
-                                        <h4 className="text-sm font-bold text-white mb-1">Indie Game Dev</h4>
-                                        <p className="text-xs text-slate-400 leading-relaxed">Building pixel art platformers in Godot Engine for fun.</p>
+                                        <h4 className="text-sm font-bold text-white mb-1">Exploring New Tech</h4>
+                                        <p className="text-xs text-slate-400 leading-relaxed">Always tinkering with new frameworks, tools, and ideas on the side.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
+                                        <Video className="w-5 h-5 text-slate-400" />
+                                    </div>
+                                    <div>
+                                        <h4 className="text-sm font-bold text-white mb-1">Content Creation</h4>
+                                        <p className="text-xs text-slate-400 leading-relaxed">Creating dev-focused content — sharing what I build and learn along the way.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Available Widget */}
-                        <div className="bg-blue-500 rounded-2xl p-6 lg:p-8 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-400 rounded-full opacity-50 blur-xl"></div>
-                            <h3 className="text-xl font-bold text-white mb-3 relative z-10">Available for projects</h3>
-                            <p className="text-blue-100 text-sm mb-6 relative z-10">
-                                Looking for a specialized developer for your next big idea? Let&apos;s connect and discuss your requirements.
-                            </p>
-                            <button className="w-full bg-white text-blue-600 font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-blue-50 transition-all relative z-10">
-                                Book a Consultation
-                            </button>
                         </div>
 
                     </div>

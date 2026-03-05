@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
     { name: "Projects", href: "/projects" },
@@ -56,8 +57,8 @@ export default function Navbar() {
                             >
                                 Hire Me
                             </Link>
-                            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-700 text-slate-400">
-                                <User strokeWidth={1.5} className="w-6 h-6" />
+                            <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-700 shrink-0">
+                                <Image src="/Abdul Rafay Khan.jpg" alt="Abdul Rafay Khan" width={40} height={40} className="w-full h-full object-cover object-top" />
                             </div>
                         </div>
                     </div>
@@ -89,8 +90,8 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <div className="mt-4 pt-4 border-t border-white/5 flex items-center gap-4 px-3">
-                            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-700 text-slate-400">
-                                <User strokeWidth={1.5} className="w-6 h-6" />
+                            <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-700 shrink-0">
+                                <Image src="/Abdul Rafay Khan.jpg" alt="Abdul Rafay Khan" width={40} height={40} className="w-full h-full object-cover object-top" />
                             </div>
                             <Link
                                 href="/hire-me"

@@ -1,58 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Code2, Rocket, Monitor, Cloud, Figma, CheckCircle2, ArrowRight } from "lucide-react";
+import { Search, Code2, Rocket, Monitor, Server, Smartphone, CheckCircle2, ArrowRight } from "lucide-react";
 
 const processSteps = [
     {
         icon: Search,
         num: "1",
-        title: "Discovery & Strategy",
-        desc: "We start by defining clear goals. I analyze your requirements, tech stack needs, and business objectives to create a roadmap that minimizes risk and maximizes value.",
+        title: "Understand the Problem",
+        desc: "Before writing a single line of code, I sit with the requirements. What does this product actually need to do? I map out the data, the flows, and the edge cases upfront so nothing surprises us later.",
     },
     {
         icon: Code2,
         num: "2",
-        title: "Development & Iteration",
-        desc: "I build your solution using modern best practices. Regular sprint demos and code reviews ensure you're always in the loop, allowing for feedback and quick adjustments.",
+        title: "Build & Iterate",
+        desc: "I ship working features incrementally — not a big reveal at the end. You see real progress throughout, and feedback gets incorporated fast. Clean code, proper structure, no shortcuts.",
     },
     {
         icon: Rocket,
         num: "3",
-        title: "Deployment & Handoff",
-        desc: "Final testing, performance optimization, and seamless deployment to your cloud environment. I provide documentation and training to ensure a smooth handover.",
+        title: "Ship & Support",
+        desc: "Production-ready deployment with testing, performance checks, and proper configuration. I don't disappear after launch — I make sure everything runs smoothly before the handoff.",
     },
 ];
 
 const services = [
     {
         icon: Monitor,
-        title: "Full-Stack Development",
-        desc: "Custom web applications built with modern frameworks like React and Node.js. High-performance and accessibility-focused solutions tailored by Abdul.",
+        title: "Full-Stack Web Development",
+        desc: "End-to-end web applications built with React / Next.js on the frontend and ASP.NET Core or Node.js on the backend. From a simple internal tool to a full product — I handle the whole stack.",
         points: [
-            "API Integration & Microservices",
-            "Database Design & Optimization",
-            "Responsive UI/UX implementation"
+            "React, Next.js & TypeScript frontends",
+            "ASP.NET Core / Node.js backends",
+            "PostgreSQL, SQL Server & MongoDB",
         ]
     },
     {
-        icon: Cloud,
-        title: "Cloud Infrastructure",
-        desc: "Scalable, secure, and cost-effective AWS/Azure cloud architecture setup. Modern DevOps practices for fast delivery.",
+        icon: Server,
+        title: "Backend & API Engineering",
+        desc: "Robust RESTful APIs, secure authentication systems, and well-structured databases. Whether you need a standalone API or a full backend for your product, I build it right the first time.",
         points: [
-            "CI/CD Pipeline Automation",
-            "Serverless & Docker Containers",
-            "Infrastructure as Code (Terraform)"
+            "REST APIs with ASP.NET Core Web API",
+            "JWT, ASP.NET Identity, MFA & OAuth",
+            "Database design, queries & optimisation",
         ]
     },
     {
-        icon: Figma,
-        title: "UI/UX Design",
-        desc: "Intuitive user interfaces and seamless user experiences for digital products. Research-driven design systems crafted by Abdul.",
+        icon: Smartphone,
+        title: "Cross-Platform Mobile Apps",
+        desc: "React Native mobile applications that work on both iOS and Android — built with the same care and architecture as any production web app. Real features, real performance.",
         points: [
-            "User Research & Personas",
-            "Interactive Prototyping",
-            "Atomic Design Systems"
+            "React Native (iOS & Android)",
+            "API integration & offline support",
+            "Auth flows, payroll & HR module experience",
         ]
     }
 ];
@@ -71,11 +71,11 @@ export default function Expertise() {
                         AVAILABLE FOR NEW PROJECTS
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                        Working with Me: <br />
-                        <span className="text-blue-500">Process & Services</span>
+                        What I Build &<br />
+                        <span className="text-blue-500">How I Work</span>
                     </h2>
                     <p className="text-slate-400 text-lg leading-relaxed">
-                        I partner with companies to build scalable digital products. My approach combines technical expertise with a transparent, collaborative process to deliver results that matter.
+                        I work with clients and teams to build real products — web apps, APIs, mobile apps, and Automation systems. Here&apos;s what I offer and how I approach every project I take on.
                     </p>
                 </div>
 
@@ -83,7 +83,7 @@ export default function Expertise() {
                 <div className="mb-32">
                     <h3 className="text-2xl font-bold text-white mb-4">My Process</h3>
                     <p className="text-slate-400 mb-12 max-w-2xl">
-                        A structured approach ensures we stay aligned and deliver on time. Here is how I handle freelance projects from start to finish.
+                        No fluff, no endless back-and-forth. Here&apos;s what working with me actually looks like from first conversation to deployment.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-8 relative">
@@ -114,7 +114,10 @@ export default function Expertise() {
 
                 {/* Core Services */}
                 <div>
-                    <h3 className="text-2xl font-bold text-white mb-12">Core Services</h3>
+                    <h3 className="text-2xl font-bold text-white mb-4">Core Services</h3>
+                    <p className="text-slate-400 mb-12 max-w-2xl">
+                        These are the three areas I spend most of my time in. If your project falls into any of these, we&apos;re probably a good fit.
+                    </p>
                     <div className="grid lg:grid-cols-3 gap-6">
                         {services.map((service, index) => (
                             <motion.div

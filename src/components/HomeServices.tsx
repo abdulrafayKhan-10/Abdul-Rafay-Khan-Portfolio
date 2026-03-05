@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, Cloud, Figma, ArrowRight } from "lucide-react";
+import { Code2, Server, Layers, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const coreServices = [
     {
-        title: "Full-Stack Development",
-        icon: Monitor,
-        desc: "End-to-end web applications built with React, Node.js, and modern databases. I focus on high performance and clean architecture."
+        title: "Frontend Development",
+        icon: Code2,
+        desc: "Pixel-precise UIs built with React and Next.js — fast to load, smooth to use, and built to scale. I turn designs into production-ready interfaces that actually feel good to interact with."
     },
     {
-        title: "Cloud Infrastructure",
-        icon: Cloud,
-        desc: "Deploying and scaling apps securely on AWS and Azure using Serverless, Docker, and CI/CD pipelines."
+        title: "Backend & API Engineering",
+        icon: Server,
+        desc: "Robust REST APIs, authentication flows, and database architecture using Node.js, ASP.NET Core, PostgreSQL, and MongoDB. Clean code, solid structure, no black boxes."
     },
     {
-        title: "UI/UX Design Systems",
-        icon: Figma,
-        desc: "Translating brand identities into functional, accessible, and stunning digital interfaces that convert."
+        title: "Product Engineering",
+        icon: Layers,
+        desc: "From idea to deployment — I work across the stack to ship complete products. Whether it's a SaaS app, an internal tool, or a client-facing platform, I own the full delivery."
     },
 ];
 
@@ -33,7 +33,7 @@ export default function HomeServices() {
                             What I Do
                         </h2>
                         <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-                            Specialized capabilities.
+                            Here's what I build.
                         </h3>
                     </div>
                     <Link href="/services" className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-medium group text-sm truncate">

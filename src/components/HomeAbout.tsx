@@ -27,11 +27,11 @@ export default function HomeAbout() {
                             <div className="absolute inset-4 rounded-[2.5rem] lg:rounded-[3rem] border border-slate-700/50 shadow-2xl overflow-hidden bg-slate-800 group transform -rotate-3 hover:rotate-0 transition-all duration-500">
                                 {/* NOTE: Replace this src with your actual image path in the public folder */}
                                 <Image
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+                                    src="/Abdul Rafay Khan.jpg"
                                     alt="Abdul Rafay Khan"
                                     width={500}
                                     height={500}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale hover:grayscale-0"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-blue-900/10 mix-blend-overlay"></div>
                             </div>
@@ -46,7 +46,7 @@ export default function HomeAbout() {
                                     <User className="w-5 h-5 text-slate-400" />
                                 </div>
                                 <div>
-                                    <p className="text-white font-bold text-sm">Full-Stack</p>
+                                    <p className="text-white font-bold text-sm">Software</p>
                                     <p className="text-blue-400 text-xs font-medium tracking-widest uppercase">Engineer</p>
                                 </div>
                             </motion.div>
@@ -62,18 +62,21 @@ export default function HomeAbout() {
                             transition={{ duration: 0.5 }}
                         >
                             <h2 className="text-sm font-bold text-blue-500 tracking-widest uppercase mb-3">
-                                Get to Know Me
+                                About Me
                             </h2>
                             <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                                Bridging the gap between <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">design and engineering.</span>
+                                I turn ideas into <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">fast, reliable software.</span>
                             </h3>
+                            <p className="text-lg text-slate-400 leading-relaxed mb-4">
+                                I&apos;m <span className="font-[family-name:var(--font-dancing-script)] text-2xl text-white font-normal tracking-wide">Abdul Rafay Khan</span>, a Software Engineer who loves working across the full stack — from crafting clean, responsive UIs to designing APIs and databases that scale.
+                            </p>
                             <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                                I don&apos;t just write code; I build robust systems designed for human experiences. From intuitive frontend interfaces to scalable backend microservices, my goal is to deliver products that perform beautifully.
+                                Whether it&apos;s a greenfield product or a legacy system that needs a new life, I bring the same focus: write code that&apos;s easy to maintain, fast in production, and actually solves the problem at hand.
                             </p>
 
                             <div className="flex items-center gap-6">
                                 <Link href="/about" className="inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] hover:bg-slate-700 border border-slate-700 hover:border-blue-500/50 text-white font-medium rounded-xl transition-all group">
-                                    More About My Journey
+                                    My Full Journey
                                     <ArrowRight className="w-4 h-4 text-blue-500 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </div>

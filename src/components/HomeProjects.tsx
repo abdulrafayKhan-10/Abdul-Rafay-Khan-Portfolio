@@ -1,31 +1,26 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowRight, Github, ExternalLink } from "lucide-react";
+﻿import { Github, ExternalLink, ArrowRight, Star, GitFork } from "lucide-react";
 import Link from "next/link";
+import { featuredProjects } from "@/config/projects";
+import { fetchRepos, GithubRepo } from "@/lib/github";
 
-const featuredProjects = [
-    {
-        title: "Nexus Marketplace",
-        desc: "Enterprise-grade e-commerce platform with real-time inventory management, multi-vendor support, and Stripe integration.",
-        tags: ["REACT", "NODE.JS", "AWS"],
-        visualStyle: "bg-slate-200"
-    },
-    {
-        title: "CloudOps Monitor",
-        desc: "Distributed system monitoring tool for K8s clusters with real-time log aggregation and predictive failure alerts.",
-        tags: ["GO", "KUBERNETES", "VUE 3"],
-        visualStyle: "bg-sky-100/20"
-    },
-    {
-        title: "Pulse Health",
-        desc: "Comprehensive fitness tracking mobile app featuring offline-first sync, wearable device integration, and AI-driven coaching.",
-        tags: ["REACT NATIVE", "FIREBASE"],
-        visualStyle: "bg-teal-100/20"
-    }
-];
+export default async function HomeProjects() {
+    // If no featured projects configured, show nothing
+    if (featuredProjects.length === 0) return null;
 
-export default function HomeProjects() {
+    const repoNames = featuredProjects.map(p => p.repo);
+    const repos = await fetchRepos(repoNames);
+
+    const enriched = repos.map(repo => {
+        const cfg = featuredProjects.find(p => p.repo === repo.name);
+        return {
+            ...repo,
+            displayName: cfg?.displayName ?? repo.name.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
+            displayDesc: cfg?.displayDesc ?? repo.description ?? "No description provided.",
+        };
+    });
+
+    if (enriched.length === 0) return null;
+
     return (
         <section className="py-24 bg-[#0a0f18] relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,66 +41,77 @@ export default function HomeProjects() {
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-8">
-                    {featuredProjects.map((project, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="group bg-[#0f172a] rounded-3xl overflow-hidden border border-slate-800 hover:border-slate-600 transition-colors flex flex-col"
+                    {enriched.map((repo) => (
+                        <div
+                            key={repo.name}
+                            className="group bg-[#0f172a] rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500/40 transition-all duration-300 flex flex-col"
                         >
-                            <Link href="/projects/e-commerce-rebuild" className="flex flex-col h-full">
-                                {/* Visual Placeholder */}
-                                <div className={`aspect-video w-full relative ${project.visualStyle} flex items-center justify-center p-6 overflow-hidden`}>
-                                    <div className="w-[80%] h-full bg-slate-100 rounded-t-lg shadow-2xl border border-slate-300 mt-10 relative overflow-hidden group-hover:-translate-y-2 transition-transform duration-500">
-                                        <div className="w-full h-6 bg-slate-200 flex items-center px-2 gap-1.5 border-b border-slate-300">
-                                            <div className="w-2 h-2 rounded-full bg-slate-400"></div>
-                                            <div className="w-2 h-2 rounded-full bg-slate-400"></div>
-                                            <div className="w-2 h-2 rounded-full bg-slate-400"></div>
-                                        </div>
-                                        <div className="p-4 flex flex-col gap-3">
-                                            <div className="w-1/3 h-2 bg-slate-300 rounded"></div>
-                                            <div className="flex gap-2">
-                                                <div className="w-full h-16 bg-blue-100 rounded border border-blue-200"></div>
-                                                <div className="w-full h-16 bg-slate-200 rounded"></div>
-                                                <div className="w-full h-16 bg-slate-200 rounded"></div>
-                                            </div>
-                                            <div className="w-full h-12 bg-slate-200 rounded"></div>
-                                        </div>
+                            {/* Header strip */}
+                            <div className="h-2 w-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400"></div>
+
+                            <div className="p-8 flex-1 flex flex-col">
+                                {/* Stats row */}
+                                <div className="flex items-center justify-between mb-5">
+                                    <div className="flex items-center gap-3 text-xs text-slate-500">
+                                        <span className="flex items-center gap-1">
+                                            <Star className="w-3.5 h-3.5" /> {repo.stargazers_count}
+                                        </span>
+                                        <span className="flex items-center gap-1">
+                                            <GitFork className="w-3.5 h-3.5" /> {repo.forks_count}
+                                        </span>
                                     </div>
+                                    {repo.language && (
+                                        <span className="flex items-center gap-1.5 text-xs text-slate-400">
+                                            <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                                            {repo.language}
+                                        </span>
+                                    )}
                                 </div>
 
-                                <div className="p-8 flex-1 flex flex-col">
+                                {/* Topics / tags */}
+                                {repo.topics.length > 0 && (
                                     <div className="flex flex-wrap gap-2 mb-4">
-                                        {project.tags.map(tag => (
-                                            <span key={tag} className="text-[10px] font-bold tracking-wider text-blue-400 bg-blue-500/10 px-2 py-1 rounded">
-                                                {tag}
+                                        {repo.topics.slice(0, 4).map((topic: string) => (
+                                            <span key={topic} className="text-[10px] font-bold tracking-wider text-blue-400 bg-blue-500/10 px-2 py-1 rounded">
+                                                {topic.toUpperCase()}
                                             </span>
                                         ))}
                                     </div>
+                                )}
 
-                                    <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                                        {project.title}
+                                <Link href={`/projects/${repo.name}`} className="group/title">
+                                    <h4 className="text-2xl font-bold text-white mb-3 group-hover/title:text-blue-400 transition-colors">
+                                        {repo.displayName}
                                     </h4>
-                                    <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-6">
-                                        {project.desc}
-                                    </p>
+                                </Link>
+                                <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-6 line-clamp-3">
+                                    {repo.displayDesc}
+                                </p>
 
-                                    <div className="flex items-center gap-6 mt-auto pt-4 border-t border-slate-800 text-sm font-medium text-slate-400">
-                                        <span className="flex items-center gap-2 hover:text-white transition-colors">
-                                            <Github className="w-4 h-4" /> Source code
-                                        </span>
-                                        <span className="flex items-center gap-2 hover:text-white transition-colors">
+                                <div className="flex items-center gap-6 mt-auto pt-4 border-t border-slate-800 text-sm font-medium text-slate-400">
+                                    <a
+                                        href={repo.html_url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 hover:text-white transition-colors"
+                                    >
+                                        <Github className="w-4 h-4" /> Source code
+                                    </a>
+                                    {repo.homepage && (
+                                        <a
+                                            href={repo.homepage}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 hover:text-white transition-colors"
+                                        >
                                             <ExternalLink className="w-4 h-4" /> Live preview
-                                        </span>
-                                    </div>
+                                        </a>
+                                    )}
                                 </div>
-                            </Link>
-                        </motion.div>
+                            </div>
+                        </div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

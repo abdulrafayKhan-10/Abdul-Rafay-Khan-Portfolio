@@ -16,7 +16,7 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
   title: "Abdul Rafay Khan | Portfolio",
-  description: "Senior Software Engineer Portfolio",
+  description: "Software Engineer Portfolio",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${dancingScript.variable} antialiased font-sans text-slate-200 bg-[#0B1120] min-h-screen flex flex-col`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${dancingScript.variable} antialiased font-sans text-slate-200 bg-[#0B1120] min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-grow">
           {children}
