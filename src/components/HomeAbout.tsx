@@ -68,10 +68,10 @@ export default function HomeAbout() {
                                 Full-stack engineer. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Product-minded builder.</span>
                             </h3>
                             <p className="text-lg text-slate-400 leading-relaxed mb-4">
-                                I&apos;m <span className="font-[family-name:var(--font-dancing-script)] text-2xl text-white font-normal tracking-wide">Abdul Rafay Khan</span> — a Software Engineer specialising in .NET and React, with real-world experience shipping e-commerce platforms, SaaS products, and enterprise HR systems from the ground up.
+                                I&apos;m <span className="font-[family-name:var(--font-dancing-script)] text-2xl text-white font-normal tracking-wide">Abdul Rafay Khan</span> — a Software Engineer with hands-on experience building e-commerce platforms, SaaS products, and enterprise HR systems using .NET and React.
                             </p>
                             <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                                I own the full picture — clean, responsive frontends, well-structured APIs, and databases built to handle production load. Whatever the stack, I write code that&apos;s fast, maintainable, and built to last.
+                                I enjoy working across the full stack — from building clean, responsive UIs to structuring APIs and databases that hold up well in production.
                             </p>
 
                             <div className="flex items-center gap-6">
