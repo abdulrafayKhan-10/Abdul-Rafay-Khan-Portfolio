@@ -57,7 +57,7 @@ export default function ProfessionalJourney() {
                             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Journey</span>
                         </h2>
                         <p className="text-slate-400 text-lg leading-relaxed">
-                            {"Here's how"} <span className="font-[family-name:var(--font-dancing-script)] text-xl text-white">Abdul Rafay Khan</span> went from writing first lines of code to shipping full-stack products — working across the .NET ecosystem, React, and modern cloud-ready architectures.
+                            From writing first lines of code to shipping production-grade systems — <span className="font-[family-name:var(--font-dancing-script)] text-xl text-white">Abdul Rafay Khan</span> has built full-stack platforms across e-commerce, SaaS, HR, and payroll — owning both the frontend and backend, across the .NET ecosystem, React, and cloud infrastructure.
                         </p>
                     </div>
                     <a

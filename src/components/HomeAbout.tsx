@@ -65,13 +65,13 @@ export default function HomeAbout() {
                                 About Me
                             </h2>
                             <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                                I turn ideas into <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">fast, reliable software.</span>
+                                Full-stack engineer. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Product-minded builder.</span>
                             </h3>
                             <p className="text-lg text-slate-400 leading-relaxed mb-4">
-                                I&apos;m <span className="font-[family-name:var(--font-dancing-script)] text-2xl text-white font-normal tracking-wide">Abdul Rafay Khan</span>, a Software Engineer who loves working across the full stack — from crafting clean, responsive UIs to designing APIs and databases that scale.
+                                I&apos;m <span className="font-[family-name:var(--font-dancing-script)] text-2xl text-white font-normal tracking-wide">Abdul Rafay Khan</span> — a Software Engineer specialising in .NET and React, with real-world experience shipping e-commerce platforms, SaaS products, and enterprise HR systems from the ground up.
                             </p>
                             <p className="text-lg text-slate-400 leading-relaxed mb-8">
-                                Whether it&apos;s a greenfield product or a legacy system that needs a new life, I bring the same focus: write code that&apos;s easy to maintain, fast in production, and actually solves the problem at hand.
+                                I own the full picture — clean, responsive frontends, well-structured APIs, and databases built to handle production load. Whatever the stack, I write code that&apos;s fast, maintainable, and built to last.
                             </p>
 
                             <div className="flex items-center gap-6">
