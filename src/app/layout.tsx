@@ -17,6 +17,10 @@ const dancingScript = Dancing_Script({
 export const metadata: Metadata = {
   title: "Abdul Rafay Khan | Portfolio",
   description: "Software Engineer Portfolio",
+  icons: {
+    icon: "/Abdul Rafay Khan.jpg",
+    apple: "/Abdul Rafay Khan.jpg",
+  },
 };
 
 export default function RootLayout({
