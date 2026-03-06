@@ -10,26 +10,27 @@ export default function ProfessionalJourney() {
             company: "World of Tech",
             location: "Remote — Pakistan",
             date: "Mar 2023 — Present",
-            description: `"Building full ERP modules end-to-end — owning both the React frontend and the ASP.NET Core backend independently on every feature."`,
-            impact: "Delivered HR, Inventory, and Finance modules in a live enterprise ERP, with measurably faster SQL Server response times after query and schema optimisation.",
+            description: `"Building full-stack features for real e-commerce and SaaS platforms — owning both the React/React Native frontend and the ASP.NET Core backend on every feature."`,
+            impact: "Delivered product catalogs, subscription flows, order management, and client dashboards across e-commerce and SaaS platforms, with measurably faster SQL Server response times after query and schema optimisation.",
             points: [
-                "Built end-to-end ERP modules (HR, Inventory, Finance) using React and ASP.NET Core, handling both frontend and backend independently.",
-                "Implemented role-based access control and secure login flows using ASP.NET Identity, JWT, and custom middleware.",
-                "Optimised SQL Server queries and schemas, reducing response times across high-traffic endpoints.",
+                "Built full-stack features for e-commerce and SaaS platforms — product catalogs, subscription flows, order management, and client dashboards using React, React Native, and ASP.NET Core.",
+                "Designed RESTful APIs powering web and mobile experiences built in React and React Native, focusing on performance and data consistency.",
+                "Implemented role-based access control using ASP.NET Identity, JWT, and custom middleware for vendor and admin portals.",
+                "Optimized SQL Server queries and schemas, reducing response times across high-traffic endpoints.",
             ]
         },
         {
-            role: "Full Stack Developer",
+            role: "Jr. .NET Developer",
             company: "MaxHR (PlanZ)",
             location: "Remote — Dubai",
             date: "Nov 2024 — Jun 2025",
-            description: `"A fast-moving product team shipping payroll, HR, and compliance features for enterprise clients across the Gulf — built in React Native and .NET APIs."`,
-            impact: "Shipped 10+ modules across payroll and HR workflows, strengthened platform security with MFA and QR auth, and integrated AWS S3 and NATS for scalable file storage and messaging.",
+            description: `"A fast-moving product team shipping payroll, HR, and compliance features for enterprise clients across the Gulf — built on ASP.NET Core APIs."`,
+            impact: "Shipped 10+ modules across HR and Payroll workflows, strengthened platform-wide security with MFA and QR auth, and integrated AWS S3 and NATS for scalable file storage and microservice messaging.",
             points: [
-                "Developed Training, Inventory, Loan, Assets, and Support Ticket modules end-to-end in React Native across HR and Payroll workflows.",
+                "Developed Training, Inventory, Loan, Assets, and Support Ticket modules end-to-end across HR and Payroll workflows using ASP.NET Core.",
                 "Implemented MFA and QR-based authentication, strengthening platform-wide security across all user roles.",
                 "Delivered SIF Payroll Gratuity Report, Payslip modifications, Auth Dashboard APIs, Trade License, and Invite modules.",
-                "Built a User-Status Cron Job for auto-checkout, integrated AWS S3 for file storage, and used NATS as a message broker across microservices.",
+                "Built a User-Status Cron Job for auto-checkout; integrated AWS S3 for file storage and NATS as a message broker across microservices.",
             ]
         },
         {
@@ -40,8 +41,7 @@ export default function ProfessionalJourney() {
             description: `"My formal introduction to production .NET systems — contributing to real internal tools from day one."`,
             impact: "Gained hands-on professional experience in backend API development and database integration within an onsite team environment.",
             points: [
-                "Contributed to internal projects using ASP.NET MVC and Web Forms.",
-                "Gained professional experience in backend API development and database integration.",
+                "Contributed to internal projects using ASP.NET MVC and Web Forms; gained hands-on experience in backend API development and database integration.",
             ]
         },
     ];
