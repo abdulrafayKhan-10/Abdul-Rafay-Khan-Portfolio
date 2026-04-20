@@ -3,6 +3,7 @@ import { fetchRepo, fetchReadme, resolveReadmeImageUrl } from "@/lib/github";
 import { projects } from "@/config/projects";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import Link from "next/link";
 import { Github, ExternalLink, Star, GitFork, ArrowLeft, Calendar } from "lucide-react";
 
@@ -140,6 +141,7 @@ export default async function ProjectDetailPage({
                     ">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeRaw]}
                             components={{
                                 // eslint-disable-next-line @next/next/no-img-element
                                 img({ src, alt, ...rest }) {
